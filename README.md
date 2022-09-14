@@ -1,5 +1,4 @@
-![logo.png](https://i.postimg.cc/Wp5xT0Tg/logo.png)
-
+![Monsterio.png](https://i.postimg.cc/zvG9Z2Pr/Monsterio.png)
 It is a simple HTML, CSS, and JavaScript-enabled web game, mainly designed for mobile screen. This game is about fight between a hero and a red monster. The main character of this game has three buttons: attack, strong attack, and heal. In this game, you also get the facility to choose different avatars of the hero, view the game history, change the theme color, etc.
 
 ## Demo 

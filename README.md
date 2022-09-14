@@ -26,5 +26,9 @@ Click here to [`Play Now`](https://rakeshid03.github.io/Monsterio/)
 - Play & Pause button.
 - Levels.
 
+## Badge
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/rakeshid03/Monsterio/blob/a6d7f402f41563872b661e24edaab6e1e996569f/LICENSE)
+
 ## Contributing
 Contributions are always welcome! 💙

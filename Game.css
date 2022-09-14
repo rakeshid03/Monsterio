@@ -1,0 +1,453 @@
+/*elements*/
+html { font-family: sans-serif;
+       cursor: auto;
+       scroll-behavior: smooth;}
+html, body{
+  background: var(--body);
+  user-select: none;
+  height:100%;
+  width:100;
+  margin:0%;
+  padding:0%;}
+
+:root {
+  --body: #2c2c2c;
+  --primary: #0099ff;
+  --secondary: #33adff;
+  --white: white;
+  --gray: gray;
+  --monster_bar: #ff4d4d;
+  --player_bg: #80dfff;
+  --control_btn: #ff0062;
+  --setting_menu: #474747;}
+
+h4{margin-left: 0.438em;
+   margin-bottom: 0rem;
+   margin-right: 0.438rem;}
+
+/*monster progress*/
+progress {
+  appearance: none;
+  width: 80%;
+  height: 0.8rem;
+  color: var(--control_btn);
+  border: 0.063rem solid var(--monster_bar);}
+progress[value]::-webkit-progress-bar,
+progress[value] {
+  background-color: white;
+  box-shadow: 0 0.125rem 0.313rem rgba(0, 0, 0, 0.25) inset;}
+progress[value]::-webkit-progress-value {
+  background-color: var(--monster_bar);
+  transition: all 0.2s ease-out;}
+progress[value]::-moz-progress-bar {
+  background-color: var(--monster_bar);
+  transition: all 0.2s ease-out;}
+  
+/*player progress*/
+.player-data progress {
+  appearance: none;
+  width: 80%;
+  height: 0.8rem;
+  color: #ff0062;
+  border: 0.063rem solid var(--secondary);}
+.player-data progress[value]::-webkit-progress-bar,progress[value] {
+  background-color: white;
+  box-shadow: 0 0.125rem 0.313rem rgba(0, 0, 0, 0.25) inset;}
+.player-data progress[value]::-webkit-progress-value {
+  background-color: var(--secondary);
+  transition: all 0.2s ease-out;}
+.player-data progress[value]::-moz-progress-bar {
+  background-color: var(--secondary);
+  transition: all 0.2s ease-out;}
+
+/* before game Start 0-100 Loading */
+.loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999999;
+    display: flex;
+    justify-content: center;
+    text-align: center;}
+    
+.loading .left {
+    float: left;
+    background:linear-gradient(90deg, #006080,  #33ccff, #006080);}
+.loading .right {
+    float: right;
+    background:linear-gradient(90deg, #33ccff, #006080, #33ccff);
+    background-position: 30%;}
+.loading .left,.loading .right {
+    width: 50%;
+    height: 100%;
+    transition: all 1.7s ease-out;
+    background-size: 350% 1200%;}
+    
+.loader {
+    position: absolute;
+    bottom: 5.625rem;
+    width: 21.875rem;
+    font-size: 0.938rem;
+    color: #FFF;
+    transition: transform 0.8s ease;
+    text-align: center;}
+    
+.loading .game-name {
+    position: absolute;
+    top: 6.95rem;
+    width: 12.5rem;
+    transition: transform 0.8s ease;
+    padding: 1.875rem 0.938rem;
+    border-radius: 0.625rem;
+    border: 0.125rem solid var(--white);
+    background-color: transparent;
+    font-size: 40px;
+    font-family: Pacifico, Arial;
+    letter-spacing: 0.125rem;
+    color: #EEE;
+    z-index: 9999; 
+    text-shadow: 0rem 0rem 0.125rem #000;}
+
+.progress-start{
+ height: 1rem;
+ width: 18rem;
+ border: 0.063rem solid #0099cc;
+ border-radius: 0.188rem;
+ margin: auto;
+ background: #1A2C34;}
+#progress-bar{
+  height: 100%;
+  width: 0.625rem;
+  background-color: var(--white);
+  color: deepskyblue;
+  font-size: 0.813rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  transition: all 730ms ease;
+  overflow: hidden;}
+
+.loading .loader .title {
+    margin-bottom: 0.938rem;
+    color:   #004d66;
+    font-size: 1.063rem;}
+    
+.loading .left.hideLoad {
+    transform: translateX(-105%);}
+.loading .right.hideLoad {
+    transform: translateX(105%);}
+.game-name-hide{transform: translateY(-350%);}
+.loader-hide{transform: translateY(400%);}
+/* End Loading */
+
+/*fade out game start*/
+.fading{animation: Ani 1s ease forwards;}
+  @keyframes Ani {
+	0% {opacity: 0.5;}
+	100% {opacity: 0;}}
+#container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000C2;}
+#play-btn{
+  background-color: var(--white);
+  height: 7rem;
+  width: 18rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  text-align: center;}
+#play-btn button{
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 0.25rem;
+  background-color: var(--secondary);}
+/*game start*/
+ 
+/*header monsterio logo */
+.header{
+      display: flex;
+      margin-bottom: -2.313rem;
+      justify-content: center;
+      flex-direction: row;}
+#logo{ 
+  position: fixed;
+  display: flex;}
+  
+/*setting button*/
+#setting{
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.063rem;
+  position: absolute;
+  border-radius: 0.75rem;
+  border: 0.063rem solid var(--gray);
+  top: 0.5rem;
+  right: 0.719rem;}
+#setting img{
+ animation: Anim 1s ease;
+ height: 2.5rem;
+ width: 2.5rem;}
+ 
+ /*settings rotate*/
+  @keyframes Anim {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}}
+	      
+  @keyframes Anims {
+	0% {transform: rotate(360deg);}
+	100% {transform: rotate(0deg);}}
+ 
+ /*pop up setting*/
+.setting-menu {
+  height: 42.5rem;
+  width: 90%;
+  right: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--setting_menu);
+  position: absolute;
+  overflow: hidden;
+  z-index: 1000;
+  border-radius: 0.5rem;
+  box-shadow: 0rem 0rem 0.125rem black;
+  margin-top: -93.70rem;
+  transition: 1s ease;
+  padding: 0.5rem;}
+  
+ .setting-menu #reset{
+   background: var(--primary);
+   border: none;
+   color: var(--white);
+   border-radius: 0.25rem;
+   width: 5rem;
+   height: 1.875rem;}
+#setting-Check{ display: none;}
+#setting-Check:checked ~ .setting-menu{
+  margin-top: -21.563rem;}
+#setting-Check:checked ~ #setting img{
+  animation: Anims 1s ease;}
+
+/*setting choose hero avatar*/
+#team{
+  margin-top: 2.188rem;
+  border-bottom: 0.063rem solid var(--gray);
+  padding-bottom: 0.688rem;}
+.hero-heading{
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--white);}
+.characters{
+  margin-top: -0.625rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;}
+.hero-1,.hero-2,.hero-3,.hero-4{
+   background-color: var(--player_bg);
+   border: 0.188rem solid var(--primary);
+   border-radius: 0.625rem;
+   overflow: hidden;
+   margin-bottom: -0.25rem;
+   height: 3.125rem ;
+   width: 3.125rem;}
+.hero-1:hover,.hero-2:hover,.hero-3:hover,.hero-4:hover{ 
+  border: 0.188rem solid var(--secondary);
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.25);}
+.hero-bg{
+  width: 5rem;
+  display: flex;
+  color: #CECECE;
+  font-size: 0.875rem;
+  letter-spacing: 0.025rem;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;}
+.hero-bg:hover{color: var(--white);}
+
+/*setting music on-off btn*/
+#setting-music{
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.125rem;
+  border-bottom: 0.063rem solid var(--gray);
+  color: var(--white);
+  align-items: center;
+  display: flex;}
+#setting-music p{margin-left: 0.438rem;}
+#setting-music button{
+  background-color: var(--primary);
+  border: none;
+  margin-left: 2.813rem;
+  height: 1.875rem;
+  width: 3.125rem;
+  color: #EFEFEF;
+  border-radius: 0.25rem;}
+#setting-music button:hover{
+  background-color:  var(--secondary);
+  box-shadow: 0px 0.025rem 0.125rem #000;}
+
+/*theme button css*/
+.theme-start{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--white);}
+.theme-bg{
+  display: flex;
+  justify-content: center;}
+.theme-bg div {
+  margin: 0px 0.625rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 100%;}
+.color-button:first-of-type { background-color: #0099ff; }
+.color-button:nth-of-type(2) { background-color: tomato; }
+.color-button:nth-of-type(3) { background-color: #ff4da6; }
+.color-button:nth-of-type(4) { background-color: #39ac6d; }
+.color-button:nth-of-type(5) { background-color: #BA55D3; }
+
+/*game history*/
+#main-box{
+  margin-top: 0.938rem;
+  text-align: center;
+  color: var(--white);}
+#main-box p{
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;}
+#box {
+  border-radius: 0.5rem;
+  height: 12.5rem;
+  overflow: scroll;
+  border: solid gray;}
+#box::-webkit-scrollbar{display: none;}
+.myDiv {
+  height: 3.125rem;
+  width: 94%;
+  color: white;
+  font-size: 1.438rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.625rem auto;
+  border-radius: 0.25rem;
+  background: var(--gray);}
+/*setting menu end*/
+/*----------------------------------------*/
+
+
+/*battle field and control*/
+#battle-field, #controls {
+  margin: 2rem auto;
+  width: 20rem;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.25);
+  background: var(--white);}
+#battle-field{
+  width: 22rem;
+  padding: 0rem 0rem;
+  margin-top: 8rem;}
+
+/* all on battle characters data*/
+.monster-data{
+  text-align: right;
+  overflow: hidden;
+  margin: -1.02rem 3.1rem 0rem 0rem;}
+#monster-health{
+  transform: rotate(-180deg);
+  border-top-right-radius: 1.2rem;
+  overflow: hidden;}
+.monster-dp{
+  background-color: pink;
+  border: 0.188rem solid #FF3232;
+  border-radius: 0.625rem;
+  margin-top: -2.688rem;
+  float: right;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  height: 2.813rem;
+  width: 2.813rem;}
+  
+.vs{text-align: center;
+  margin-top: 0.563rem;
+  padding: 4rem 2rem;}
+
+.player-data{ 
+  overflow: hidden;
+  margin: 0rem 0rem 0.48rem 3.1rem;}
+#player-health{
+  overflow: hidden;
+  border-bottom-right-radius: 1.2rem;}
+ .player-dp{
+   background-color: var(--player_bg);
+   border: 0.188rem solid var(--primary);
+   border-radius: 0.625rem;
+   margin-bottom: -4.188rem;
+   overflow: hidden;
+   position: relative;
+   height: 2.813rem;
+   width: 2.813rem;}
+
+/*attack button in control*/
+#controls{ 
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;}
+#controls button{
+  font: inherit;
+  background: var(--control_btn);
+  border: 0.063rem solid var(--control_btn);
+  color: var(--white);
+  overflow: hidden;
+  box-shadow: 0px 0.025rem 0.125rem #000;
+  padding: 1rem 2rem;
+  border-radius: 0.375rem;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  margin: 0.5rem;}
+#controls button:focus {
+  outline: none;}
+#controls button:hover,button:active {
+  background: var(--primary);
+  border-color: var(--primary);}
+
+/*count icon inside attck & heal btn*/
+#count-sa,#count-h{
+  font-size: 0.875rem;
+  height: 0.938rem;
+  width: 1.188rem;
+  color: #B6B6B6;
+  border: 0.063rem solid #B6B6B6;
+  border-radius: 0.313rem;
+  position: absolute;
+  right: 0.75rem;}
+
+/*about creator*/
+.signature{
+  color: var(--gray);
+  font-size: 0.75rem;
+  margin-top: 2rem;}
+.sign{
+  text-decoration: none;
+  color: #78909C;}
+
+/*on desktop mode*/
+@media only screen and (min-width: 768px){
+#battle-field{width: 85%;}
+#controls{ width: 82%;}
+.setting-menu{width: 86%;}
+.theme-bg div {margin: 0rem 3.6rem;}
+#setting-music p{margin-left: 3.988rem;}}

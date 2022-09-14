@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2c2c2c">
+    <title>Monsterio</title>
+    <link rel="icon" type="image/icon" href="m.png">
+    <link rel="stylesheet" href="Game.css" />
+    <script src="vendor.js" defer></script>
+    <script src="Game.js" defer></script>
+ 
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
+  </head>
+  <body>
+
+<!-- before start game loading page--> 
+<div class="loading">
+  <div class="left"></div>
+  <div class="right"></div>
+  <h2 class="game-name">Monsterio</h2>   
+      <div class="loader">
+       <div class="title">Loading...</div>
+         <div class="progress-start">
+         <div id="progress-bar"></div>
+         </div>
+     </div>
+</div>
+<!-- End Loading page-->
+
+<!--game start button-->
+<div id="container">
+  <div id="play-btn">
+    <h2>Start Game</h2>
+    <button onclick="fade();musical()">OK</button>
+  </div>
+</div>
+
+<!-- game logo-->
+<div class="header">
+    <div id="logo">
+      <img src="Media/logo.png" alt="monsterio" height="55" width="240">
+    </div>
+</div>
+<br/>
+
+<!--setting button-->
+<input type="checkbox" id="setting-Check"/>
+<label id="setting" for="setting-Check">
+ <img src="Media/settings.png" alt="setting">
+</label>
+
+<!--play background music-->
+<audio id="myAudio" hidden>
+ <source src="Media/orbit.mp3" type="audio/mpeg">
+</audio>
+
+<!--battle field start-->
+<section id="battle-field">
+     <!--monster data-->
+     <div class="monster-data">
+     <h4>Monster Health</h4> 
+     <progress id="monster-health" max="100" value="100"></progress>
+     </div>
+     <div class="monster-dp">
+        <img src="Media/monster.png" alt="monster.png" width="45px" height="45px">
+     </div>
+     
+     <!--vs sign-->
+     <div class="vs">
+      <img src="Media/vs.png" alt="vs.png" height="90">
+     </div>
+     
+     <!--player data-->
+      <div class="player-dp">
+     <img src="Media/hero.png" id="myhero" alt="hero.png" width="45px" height="45px">
+      </div>
+      <div class="player-data">
+   <h4 id="hero-name">Hero Health</h4>
+      <progress id="player-health" max="100" value="100"></progress>
+      </div>
+</section>
+ 
+ <!--All Attack list-->
+<section id="controls">
+    <button id="attack-btn">ATTACK</button>
+    <button onclick="saclick()" id="strong-attack-btn">STRONG ATTACK <span id="count-sa">10</span></button>
+    <button onclick="hclick()" id="heal-btn">HEAL <span id="count-h">03</span></button>
+</section>
+  
+<!--about devloper-->
+<footer align="center" class="signature">
+  <code>Made by <a href="https://about.me/rakeshid03" class="sign">@rakeshid03</a>
+  </code>
+</footer>
+
+<!----------------------------------------->
+<!--pop up settings-->
+<div class="setting-menu">
+
+<!--reset game button-->
+<button class="color-button" data-theme="dblu" id="reset" data-theme="dblue" onclick="re();resethistory();offmusical();resetheal();counth();countsa();resetsa();dheroname()">Reset All</button>
+  
+<!--choose heros avatar-->
+<section id="team">
+<p class="hero-heading">Choose your hero avatar</p>
+<div class="characters">
+  
+ <div class="hero-bg">
+ <div class="hero-1" onclick="hpic1()">
+    <img src="Media/swordman.png" alt="swordman" width="50px" height="50px">
+  </div>
+  <p>Swordman</p>
+ </div>
+  
+  <div class="hero-bg">
+  <div class="hero-2" onclick="hpic2()"> 
+    <img src="Media/female warrior.png" alt="female warrior" width="50px" height="50px">
+  </div>
+  <p>Warrioress</p>
+  </div>
+  
+  <div class="hero-bg">
+  <div class="hero-3" onclick="hpic3()"> 
+    <img src="Media/warrior.png" alt="warrior"
+        width="50px" height="50px">
+  </div>
+  <p>Warrior</p>
+  </div>
+  
+  <div class="hero-bg">
+  <div class="hero-4" onclick="hpic4()">
+    <img src="Media/ninja.png" alt="ninja"
+        width="50px" height="50px">
+  </div>
+  <p>Ninja</p>
+  </div>
+</div>
+</section>
+
+<!--setting music on-off btn-->
+<div id="setting-music">
+<p>Music :</p>
+<button onclick="s_on_music()">On</button>
+<button onclick="s_off_music()">Off</button>
+</div>
+
+<!--theme colour button-->
+<div class="theme-start">
+<p>Theme Colour</p>
+ <div class="theme-bg">
+  <div class="color-button" data-theme="blue"></div>
+  <div class="color-button" data-theme="tomato"></div>
+  <div class="color-button" data-theme="pink"></div>
+  <div class="color-button" data-theme="green"></div>
+  <div class="color-button" data-theme="Purple"></div>
+ </div>
+</div>
+
+<!--game history-->
+<div id="main-box">
+  <p>Game History</p>
+  <div id = "box"></div>
+</div>
+
+</div>
+</body>
+</html>

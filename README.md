@@ -1,5 +1,5 @@
 ![Monsterio.png](https://i.postimg.cc/zvG9Z2Pr/Monsterio.png)
-It is a simple HTML, CSS, and JavaScript-enabled web game, mainly designed for mobile screen. This game is about fight between a hero and a red monster. The main character of this game has three buttons: attack, strong attack, and heal. In this game, you also get the facility to choose different avatars of the hero, view the game history, change the theme color, etc.
+Monsterio is a simple HTML, CSS, and JavaScript-enabled web game, mainly designed for mobile screen. This game is about fight between a hero and a red monster. The main character of this game has three buttons: attack, strong attack, and heal. In this game, you also get the facility to choose different avatars of the hero, view the game history, change the theme color, etc.
 
 ## Demo 
 Click here to [`Play Now`](https://rakeshid03.github.io/Monsterio/)
@@ -9,7 +9,7 @@ Click here to [`Play Now`](https://rakeshid03.github.io/Monsterio/)
 ![Monster.png](https://i.postimg.cc/85Ntj6LX/Monster.png)
 
 ## Tutorial & features
-- It all starts with a simple loading screen and it fade-out within a few seconds.
+- Monsterio game starts with a simple loading screen and it fade-out within a few seconds.
 - Then a `start game` button will pop up in the center of your device screen. After clicking on it the game will start and background music will also start.
 - Now you can see a battlefield, Control with three buttons, logo, and setting button.
 - Now you can play the game. But note that you only have 10 `Strong Attack`  and 3 `Heal`.

@@ -328,7 +328,7 @@ progress[value]::-moz-progress-bar {
 #box {
   border-radius: 0.5rem;
   height: 12.5rem;
-  overflow: scroll;
+  overflow: auto;
   border: solid gray;}
 #box::-webkit-scrollbar{display: none;}
 .myDiv {

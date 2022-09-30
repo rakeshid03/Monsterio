@@ -189,7 +189,7 @@ progress[value]::-moz-progress-bar {
   height: 2.5rem;
   width: 2.5rem;
   padding: 0.063rem;
-  position: absolute;
+  position: fixed;
   border-radius: 0.75rem;
   border: 0.063rem solid var(--gray);
   top: 0.5rem;
@@ -234,7 +234,7 @@ progress[value]::-moz-progress-bar {
    height: 1.875rem;}
 #setting-Check{ display: none;}
 #setting-Check:checked ~ .setting-menu{
-  margin-top: -21.563rem;}
+  margin-top: -20.563rem;}
 #setting-Check:checked ~ #setting img{
   animation: Anims 1s ease;}
 
@@ -358,7 +358,7 @@ progress[value]::-moz-progress-bar {
 #battle-field{
   width: 22rem;
   padding: 0rem 0rem;
-  margin-top: 8rem;}
+  margin-top: 7rem;}
 
 /* all on battle characters data*/
 .monster-data{

@@ -181,7 +181,7 @@ progress[value]::-moz-progress-bar {
       flex-direction: row;}
 #logo{ 
   z-index: 200;
-  position: fixed;
+  position: absolute;
   display: flex;}
   
 /*setting button*/

@@ -446,7 +446,7 @@ progress[value]::-moz-progress-bar {
   color: #78909C;}
 
 /*on desktop mode*/
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 1024px){
 #battle-field{width: 85%;}
 #controls{ width: 82%;}
 .setting-menu{width: 86%;}

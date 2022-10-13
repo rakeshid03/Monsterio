@@ -2,10 +2,10 @@
 html { font-family: sans-serif;
        cursor: auto;
        scroll-behavior: smooth;}
-html, body{
+body{
   background: var(--body);
   user-select: none;
-  height:100%;
+  height:100vh;
   width:100%;
   margin:0%;
   padding:0%;}
